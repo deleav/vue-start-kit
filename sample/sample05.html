@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Vue</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!--
+      template
+    -->
+    <div id="app">
+      <p>How are you today?</p>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      },
+      template: `
+        <div>
+          Hey, {{ message }}
+        </div>
+      `
+    })
+  </script>
+</html>
