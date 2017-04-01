@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Vue</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!--
+      v-model with component
+    -->
+    <div id="app">
+      <currency-input v-model="price"></currency-input>
+    </div>
+  </body>
+  <script>
+    Vue.component('currency-input', {
+      template: `
+        <span>
+          <input
+            v-bind:value="value"
+            v-on:input="updateValue($event.target.value)"
+          />
+        </span>
+      `,
+      props: ['value'],
+      methods: {
+        // 不能直接更新值，而是使用此方法來對輸入值進行觸發 input event
+        updateValue: function (value) {
+          this.$emit('input', value);
+        }
+      }
+    })
+    new Vue({
+      el: 'app',
+      data: {
+        price: 0
+      }
+    })
+  </script>
+</html>
