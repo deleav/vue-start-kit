@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Vue</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!--
+      Component Naming Conventions
+
+      <my-component></my-component>
+      <myComponent></myComponent>
+      <MyComponent></MyComponent>
+    -->
+    <div id="app">
+      <my-component></my-component>
+    </div>
+  </body>
+  <script>
+    // my-component // kebab-case
+    // myComponent  // camelCase
+    // MyComponent  // TitleCase
+
+    Vue.component('my-component', {
+      template: `
+        <div>
+          Hello Vue!
+        </div>
+      `
+    })
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</html>
