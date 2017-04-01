@@ -11,6 +11,7 @@
     -->
     <div id="app">
       <currency-input v-model="price"></currency-input>
+      <div> {{ price }} </div>
     </div>
   </body>
   <script>
@@ -32,7 +33,7 @@
       }
     })
     new Vue({
-      el: 'app',
+      el: '#app',
       data: {
         price: 0
       }
