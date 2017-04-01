@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Vue</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!--
+      Component Local Registration
+    -->
+    <div id="app">
+      <my-component></my-component>
+      <my-name-component></my-name-component>
+      <inline-sample></inline-sample>
+    </div>
+  </body>
+  <script>
+    var Child = {
+      template: '<div>A custom component!</div>'
+    };
+    var Child2 = {
+      template: '<div>Hi my name is {{name}}.</div>',
+      data() {
+        return {
+          name: 'Deleav'
+        }
+      }
+    }
+    new Vue({
+      el: '#app',
+      components: {
+        // <my-component> will only be available in parent's template
+        'my-component': Child,
+        'my-name-component': Child2,
+        'inline-sample': {
+          template: `
+            <div>You can declare this directly</div>
+          `
+        }
+      }
+    })
+  </script>
+</html>
