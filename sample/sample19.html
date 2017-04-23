@@ -15,14 +15,14 @@
     -->
     <div id="app">
       <my-component></my-component>
+      <!--<myComponent></myComponent>-->
+      <!--<MyComponent></MyComponent>-->
     </div>
   </body>
   <script>
-    // my-component // kebab-case
-    // myComponent  // camelCase
-    // MyComponent  // TitleCase
-
-    Vue.component('my-component', {
+    // Vue.component('my-component', { // kebab-case
+    // Vue.component('myComponent', {  // camelCase
+    Vue.component('MyComponent', {  // TitleCase
       template: `
         <div>
           Hello Vue!
